@@ -1,0 +1,22 @@
+#vscode
+.vscode/
+*.code-workspace
+
+#caches
+__pycache__/
+*.py[cod]
+
+# envs
+# env_req.txt
+.env/
+env/
+envs/
+.envs/
+.testenv/
+*.envfile
+
+#garbage
+.DS_Store
+
+#results
+*.xlsx
