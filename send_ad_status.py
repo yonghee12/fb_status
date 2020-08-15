@@ -48,7 +48,6 @@ def getting_campaigns_all_status(ad_account_id, fields, params_ = {}):
     params.update(params_)
     # Main
     campaigns = AdAccount(ad_account_id).get_campaigns(fields=fields, params=params)
-#     campaigns = fbdict_list_to_dics_list(campaigns)
     return fbdict_list_to_dics_list(campaigns)
 
 def getting_adsets_by_campaign(campaign_id, fields):
@@ -73,19 +72,10 @@ def getting_ads_by_adset(adset_id, fields):
     ads = AdSet(adset_id).get_ads(fields = fields)
     return fbdict_list_to_dics_list(ads)
 
-
 campaign_id = '23843308835020636'
 # campaign_id = '23843300409300636'
 fields = ['id', 'name', 'status', 'effective_status', 'issues_info']
 adsets = getting_adsets_and_an_ad_by_campaign(campaign_id, fields)
-
-#보여주기
-# pd.DataFrame(adsets, columns = fields)
-# columns = ['name', 'status', 'effective_status', 'ad_status', 
-#            'ad_effective_status', 'issues_info', 'ad_issues_info']
-# print(pd.DataFrame(adsets, columns=columns))
-# df = pd.DataFrame(adsets, columns=columns)
-# print(tabulate(df, headers='keys', tablefmt='psql', floatfmt=",.0f"))
 
 message = ''
 for adset in adsets:
